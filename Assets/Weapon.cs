@@ -21,4 +21,12 @@ public class Weapon : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public Vector2 OrientedRange(int orientation){
+		if (orientation == 0 || orientation == 2) {
+			return Range;
+		} else {
+			return new Vector2 (Range.y, Range.x);
+		}
+	}
 }

@@ -47,11 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Character Code\CharacterController.cs" />
+     <Compile Include="Assets\EnemyController.cs" />
      <Compile Include="Assets\Global Code\AudioManager.cs" />
      <Compile Include="Assets\Global Code\Sound.cs" />
+     <Compile Include="Assets\Global Code\TimeAffectedObject.cs" />
+     <Compile Include="Assets\Global Code\TimeEvent.cs" />
+     <Compile Include="Assets\Global Code\TimeManager.cs" />
      <Compile Include="Assets\Input Code\InputButton.cs" />
      <Compile Include="Assets\Input Code\MovementInput.cs" />
      <Compile Include="Assets\Input Code\PhoneTouchControls.cs" />
+     <Compile Include="Assets\TouchCount.cs" />
      <Compile Include="Assets\Weapon.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />

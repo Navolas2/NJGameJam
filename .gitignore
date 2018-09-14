@@ -1,3 +1,7 @@
 /Temp/*
+<<<<<<< HEAD
 /library/ShaderCache/*
+=======
+/Library/ShaderCache/*
+>>>>>>> Input_And_Time
 /Library/metadata/*

@@ -27,3 +27,5 @@ C:\Users\Nicholas\Documents\NJGameJam\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\Nicholas\Documents\NJGameJam\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\Nicholas\Documents\NJGameJam\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Nicholas\Documents\NJGameJam\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Nicholas\Documents\NJGameJam\Temp\bin\Debug\UnityEngine.Advertisements.dll
+C:\Users\Nicholas\Documents\NJGameJam\Temp\bin\Debug\UnityEngine.Advertisements.xml
