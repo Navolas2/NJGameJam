@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour, TimeEvent {
 	public float MaxVelocity = 20;
 	private int jumpCount = 0;
 	public UnityEngine.UI.Text TextBox;
+	private Vector2 PriorVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -22,13 +23,19 @@ public class CharacterController : MonoBehaviour, TimeEvent {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 
+		Vector2 force = new Vector2 (horizontal, vertical);
+
 		if (horizontal != 0 || vertical != 0) {
 			if (!TimeManager.manager.EventExist (this)) {
 				TimeManager.manager.AddEvent (this);
+				float vel = Mathf.Sqrt (Mathf.Pow (PriorVelocity.x, 2) + Mathf.Pow (PriorVelocity.y, 2));
+				Vector2 new_vel = new Vector2 (force.x * vel, force.y * vel);
+				Debug.Log (PriorVelocity.ToString () + " -> " + force.ToString() + " " + new_vel.ToString ());
+				rb2d.velocity = new_vel;
 			}
 			TextBox.text = "Move";
-			rb2d.AddForce (new Vector2(horizontal, vertical));
-
+			rb2d.AddForce (force);
+			Debug.Log (force.ToString ());
 
 			Vector2 current_Velocity = rb2d.velocity;
 
@@ -43,7 +50,7 @@ public class CharacterController : MonoBehaviour, TimeEvent {
 		} else {
 			if (TimeManager.manager.EventExist (this)) {
 				TextBox.text = "Stop";
-				Debug.Log ("Stopping " + Time.time.ToString ());
+				//Debug.Log ("Stopping " + Time.time.ToString ());
 				RemoveVelocity ();
 				TimeManager.manager.RemoveEvent (this);
 			}
@@ -69,6 +76,7 @@ public class CharacterController : MonoBehaviour, TimeEvent {
 	}
 
 	public void RemoveVelocity(){
+		PriorVelocity = rb2d.velocity;
 		rb2d.velocity = new Vector2 ();
 	}
 
